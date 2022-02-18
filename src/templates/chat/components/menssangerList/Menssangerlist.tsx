@@ -9,7 +9,7 @@ export const MenssangerList: JSXElementConstructor<
 }) => {
   return (
     <S.Container>
-      {menssagens.map(({ id, name, mensager, created_at }) => {
+      {menssagens?.map(({ id, name, mensager, created_at }) => {
         return (
           <S.Card key={id}>
             <div>

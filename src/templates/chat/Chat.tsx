@@ -1,23 +1,41 @@
 import { useRouter } from 'next/router'
-import React, { ChangeEvent, FC, FormEvent } from 'react'
+import React, { ChangeEvent, FC, FormEvent, JSXElementConstructor } from 'react'
+import { CHAT_CONFIG } from './Chat.config'
 import * as S from './Chat.styles'
+import { ChatTemplateProps } from './Chat.types'
 import { MenssangerList } from './components/menssangerList/Menssangerlist'
-import { useChatFactory } from './hooks/useChat'
+import { useChatFactory as defaultUseChatFactory } from './hooks/useChat'
 
-export const ChatTemplate: FC = () => {
+export const ChatTemplate: JSXElementConstructor<
+  ChatTemplateProps
+> = ({
+  useChatFactory = defaultUseChatFactory
+}) => {
   const router = useRouter()
   const {
     handleMsg,
+    userName,
     handleNewMenssagem,
     listMenssages,
     setHandleMsg
   } = useChatFactory()
 
+  if (listMenssages === undefined) {
+    return (
+      <S.Container>
+        <img
+          src={CHAT_CONFIG.IMAGENS.LOADING.VALUE}
+          alt={CHAT_CONFIG.IMAGENS.LOADING.ALT}
+        />
+      </S.Container>
+    )
+  }
+
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Chat</S.Title>
-        <S.Button onClick={() => router.push('/')}>Sair</S.Button>
+        <S.Title>{CHAT_CONFIG.TITLE} {userName}</S.Title>
+        <S.Button onClick={() => router.push('/')}>{CHAT_CONFIG.EXIT_BUTTON.VALUE}</S.Button>
       </S.Header>
       <S.Card>
         <MenssangerList menssagens={listMenssages} />

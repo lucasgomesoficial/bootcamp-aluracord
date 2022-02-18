@@ -11,6 +11,8 @@ export const Form = styled.form`
   margin-bottom: 32px;
 `
 
+export const HeaderForm = styled.div``
+
 export const Title = styled.h2`
   color: ${props => props.theme.colors.neutrals['000']};
   font-size: 24px;
@@ -20,6 +22,12 @@ export const Title = styled.h2`
 export const Description = styled.p`
   color: ${props => props.theme.colors.neutrals['300']};
   margin-bottom: 32px;
+`
+
+export const InputForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 `
 
 export const Input = styled.input`

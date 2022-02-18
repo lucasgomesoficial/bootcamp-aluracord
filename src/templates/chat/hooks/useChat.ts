@@ -1,14 +1,18 @@
+import { useRouter } from "next/router"
 import { useCallback, useEffect, useState } from "react"
 import toast from "react-hot-toast"
 import { gateway } from "../../../services/gateway/gateway"
+import { ListMensagensData, useChatFactoryTypes } from "./useChat.types"
 
-export const useChatFactory = () => {
+export const useChatFactory = (): useChatFactoryTypes => {
+  const { query } = useRouter()
+  const { userName } = query
   const [handleMsg, setHandleMsg] = useState('')
-  const [listMenssages, setListMenssages] = useState([])
+  const [listMenssages, setListMenssages] = useState<ListMensagensData[]>()
 
   const handleNewMenssagem = useCallback((newMenssager: string) => {
     const dataMenssanger = {
-      name: 'vanessametonini',
+      name: userName,
       mensager: newMenssager
     }
 
@@ -38,6 +42,7 @@ export const useChatFactory = () => {
   }, [handleMsg])
 
   return {
+    userName,
     listMenssages,
     handleMsg,
     setHandleMsg,

@@ -1,10 +1,7 @@
-export type MenssangersType = {
-  id: string
-  name: string
-  mensager: string
-  created_at: string
-}
+import { ListMensagensData } from "../../hooks/useChat.types"
+
+export type MenssangersType = ListMensagensData
 
 export type MenssangerListProps = {
-  menssagens: MenssangersType[]
+  menssagens?: MenssangersType[]
 }

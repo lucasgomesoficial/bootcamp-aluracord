@@ -1,8 +1,12 @@
 import React, { FC } from 'react'
+import { BrowserTab } from '../components/browserTab/BrowserTab'
 import { HomeTemplate } from '../templates/home/Home'
 
-const Home: FC = () => {
-  return <HomeTemplate />
+export default function Home() {
+  return (
+    <>
+      <BrowserTab text='Home' />
+      <HomeTemplate />
+    </>
+  )
 }
-
-export default Home
