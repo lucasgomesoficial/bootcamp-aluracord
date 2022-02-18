@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { BrowserTab } from '../../components/browserTab/BrowserTab'
 import { ChatTemplate } from '../../templates/chat/Chat'
 
-const Chat: FC = () => {
+export default function Chat() {
   return (
     <>
       <BrowserTab text='Chat' />
@@ -10,5 +10,3 @@ const Chat: FC = () => {
     </>
   )
 }
-
-export default Chat
