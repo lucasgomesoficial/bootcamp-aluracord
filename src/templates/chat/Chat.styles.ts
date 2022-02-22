@@ -39,8 +39,8 @@ export const Card = styled.div`
   padding: 16px;
   background-color: ${props => props.theme.colors.neutrals['600']};
   border-radius: 5px;
-  max-height: 70%;
-  width: 50%;
+  max-height: 80vh;
+  width: 50vw;
 `
 
 export const Form = styled.form`
@@ -49,12 +49,12 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
-  width: 100%;
+  width: 97%;
+  margin-top: 15px;
   border: 0;
   resize: none;
   border-radius: 5px;
   padding: 6px 8px;
   background-color: ${props => props.theme.colors.neutrals['800']};
-  margin-right: 12px;
   color: ${props => props.theme.colors.neutrals['200']};
 `

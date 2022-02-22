@@ -1,12 +1,7 @@
 export const HOME_CONFIG = {
-  TITLE: 'Boas vindas de volta!',
-  DECRIPTION: 'Aluracord - Bootcamp',
-  ACCESS_BUTTON: {
-    VALUE: 'Entrar'
-  },
   HOME_FORM: {
     TITLE: 'Boas vindas ao chat!',
-    DECRIPTION: 'Aluracord - Bootcamp',
+    DECRIPTION: 'Projeto Bootcamp',
     ACCESS_BUTTON: {
       VALUE: 'Entrar'
     }

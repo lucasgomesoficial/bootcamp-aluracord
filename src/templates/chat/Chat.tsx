@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { ChangeEvent, FC, FormEvent, JSXElementConstructor } from 'react'
+import React, { ChangeEvent, FormEvent, JSXElementConstructor } from 'react'
 import { CHAT_CONFIG } from './Chat.config'
 import * as S from './Chat.styles'
 import { ChatTemplateProps } from './Chat.types'

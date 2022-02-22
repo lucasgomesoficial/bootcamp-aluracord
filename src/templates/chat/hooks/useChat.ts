@@ -30,7 +30,8 @@ export const useChatFactory = (): useChatFactoryTypes => {
   const showListMensagens = useCallback(() => {
     gateway.get('mensagens')
       .then(({data}) => {
-        setListMenssages(data)
+        const newData = data.slice(0).reverse();
+        setListMenssages(newData)
       })
       .catch((err) => {
         toast.error(`Deu ruim, erro: ${err}`)

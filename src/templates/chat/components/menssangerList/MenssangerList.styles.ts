@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const Container = styled.ul`
   overflow: scroll;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   flex: 1;
   color: ${props => props.theme.colors.neutrals['000']};
   gap: 10px;
+  overflow-x: hidden;
 `
 
 export const Card = styled.li`
