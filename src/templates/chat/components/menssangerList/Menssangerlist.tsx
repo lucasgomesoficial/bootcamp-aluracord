@@ -1,10 +1,9 @@
 import React, { JSXElementConstructor } from 'react'
 import { MenssangerListProps } from './MenssangerList.types'
 import * as S from './MenssangerList.styles'
+import { dateFormatter } from '../../../../utils/dateFormatter/dateFormatter'
 
-export const MenssangerList: JSXElementConstructor<
-  MenssangerListProps
-> = ({
+export const MenssangerList: JSXElementConstructor<MenssangerListProps> = ({
   menssagens
 }) => {
   return (
@@ -15,7 +14,7 @@ export const MenssangerList: JSXElementConstructor<
             <div>
               <S.Image src={`https://github.com/${name}.png`} />
               <p>{name}</p>
-              <S.DateMsg>{created_at}</S.DateMsg>
+              <S.DateMsg>{dateFormatter(created_at)}</S.DateMsg>
             </div>
             {mensager}
           </S.Card>
